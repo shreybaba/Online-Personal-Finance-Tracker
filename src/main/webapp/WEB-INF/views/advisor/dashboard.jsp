@@ -15,6 +15,7 @@
 
     <main class="main-content">
         <div class="content-wrapper">
+            <jsp:include page="../common/alerts.jsp"/>
             
             <div class="page-header">
                 <div>
@@ -59,9 +60,9 @@
                                     <c:forEach items="${adviceList}" var="adv">
                                         <tr>
                                             <td class="font-mono text-muted">${adv.id}</td>
-                                            <td class="font-mono">${adv.user_id}</td>
+                                            <td class="font-mono">${adv.userId}</td>
                                             <td class="text-muted">${adv.date}</td>
-                                            <td>${adv.message}</td>
+                                            <td class="cell-wrap">${adv.message}</td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

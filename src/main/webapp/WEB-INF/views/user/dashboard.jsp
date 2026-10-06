@@ -16,11 +16,7 @@
     <main class="main-content">
         <div class="content-wrapper">
             
-            <c:if test="${not empty errorMessage}">
-                <div class="alert alert-error mb-4">
-                    ${errorMessage}
-                </div>
-            </c:if>
+            <jsp:include page="../common/alerts.jsp"/>
 
             <!-- Dashboard Heading -->
             <div class="page-header">
@@ -188,7 +184,7 @@
                                 <c:forEach items="${adviceList}" var="adv">
                                     <div class="advice-card">
                                         <div class="advice-meta">
-                                            <span>Advisor ID: ${adv.advisorId != null ? adv.advisorId : adv.advisor_id}</span>
+                                            <span>Advisor ID: ${adv.advisorId}</span>
                                             <span>${adv.date}</span>
                                         </div>
                                         <div class="advice-content">${adv.message}</div>

@@ -15,6 +15,7 @@
 
     <main class="main-content">
         <div class="content-wrapper">
+            <jsp:include page="../common/alerts.jsp"/>
             
             <div class="page-header">
                 <div>
@@ -46,9 +47,9 @@
                                     <c:forEach items="${feedbackList}" var="fb">
                                         <tr>
                                             <td class="font-mono text-muted">${fb.id}</td>
-                                            <td class="font-mono">${fb.user_id}</td>
+                                            <td class="font-mono">${fb.userId}</td>
                                             <td class="text-muted">${fb.date}</td>
-                                            <td>${fb.message}</td>
+                                            <td class="cell-wrap">${fb.message}</td>
                                             <td>
                                                 <span class="badge badge-info">${fb.status}</span>
                                             </td>

@@ -12,7 +12,7 @@
     <div class="navbar-actions">
         <%-- Display session user details if logged in --%>
         <div class="user-profile-badge">
-            <span>${sessionScope.user != null ? sessionScope.user.name : (param.role != null ? param.role : 'Account')}</span>
+            <span class="user-name">${sessionScope.user != null ? sessionScope.user.name : (param.role != null ? param.role : 'Account')}</span>
             <span class="role-pill">${sessionScope.user != null ? sessionScope.user.role : (param.role != null ? param.role : 'USER')}</span>
         </div>
 

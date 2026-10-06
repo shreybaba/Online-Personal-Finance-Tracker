@@ -16,11 +16,7 @@
     <main class="main-content">
         <div class="content-wrapper">
             
-            <c:if test="${not empty errorMessage}">
-                <div class="alert alert-error mb-4">
-                    ${errorMessage}
-                </div>
-            </c:if>
+            <jsp:include page="../common/alerts.jsp"/>
 
             <div class="page-header">
                 <div>
@@ -118,9 +114,9 @@
                                     <tbody>
                                         <c:forEach items="${feedbackList}" var="fb">
                                             <tr>
-                                                <td class="font-mono">${fb.userId != null ? fb.userId : fb.user_id}</td>
+                                                <td class="font-mono">${fb.userId}</td>
                                                 <td><span class="badge badge-info">${fb.status}</span></td>
-                                                <td>${fb.message}</td>
+                                                <td class="cell-wrap">${fb.message}</td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>

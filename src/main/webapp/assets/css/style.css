@@ -361,6 +361,15 @@ select.form-control {
     vertical-align: middle;
 }
 
+/* IDs and amounts stay on one line; free-text columns keep a readable width */
+.table td.font-mono {
+    white-space: nowrap;
+}
+
+.table td.cell-wrap {
+    min-width: 160px;
+}
+
 .table tr:last-child td {
     border-bottom: none;
 }
@@ -412,6 +421,12 @@ select.form-control {
     background-color: #211616;
     border-color: #3D2222;
     color: #C57D7D;
+}
+
+.alert-success {
+    background-color: #142019;
+    border-color: #213A2B;
+    color: #7DC59A;
 }
 
 /* --- Layout Structure --- */
@@ -469,6 +484,7 @@ select.form-control {
 .gap-2 { gap: var(--space-2); }
 .gap-3 { gap: var(--space-3); }
 .gap-4 { gap: var(--space-4); }
+.mb-0 { margin-bottom: 0; }
 .mb-1 { margin-bottom: var(--space-1); }
 .mb-2 { margin-bottom: var(--space-2); }
 .mb-3 { margin-bottom: var(--space-3); }

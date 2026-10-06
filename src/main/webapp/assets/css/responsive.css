@@ -115,4 +115,16 @@
     .stat-value {
         font-size: 1.5rem;
     }
+
+    .app-navbar {
+        padding: 0 var(--space-2);
+    }
+
+    .navbar-actions {
+        gap: var(--space-2);
+    }
+
+    .user-profile-badge .user-name {
+        display: none;
+    }
 }

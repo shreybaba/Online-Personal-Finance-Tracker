@@ -1,0 +1,6 @@
+# Copy this file to db.properties (same folder) and fill in your MySQL details.
+# db.properties is git-ignored so your password stays out of the repo.
+# Environment variables DB_URL, DB_USER and DB_PASSWORD override these values.
+db.url=jdbc:mysql://localhost:3306/suspicious4
+db.user=root
+db.password=change-me

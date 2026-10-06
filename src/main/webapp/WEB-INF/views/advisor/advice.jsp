@@ -16,11 +16,7 @@
     <main class="main-content">
         <div class="content-wrapper">
             
-            <c:if test="${not empty errorMessage}">
-                <div class="alert alert-error mb-4">
-                    ${errorMessage}
-                </div>
-            </c:if>
+            <jsp:include page="../common/alerts.jsp"/>
 
             <div class="page-header">
                 <div>
@@ -137,33 +133,19 @@
 
                     <c:choose>
                         <c:when test="${not empty adviceList}">
-                            <div class="table-container">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Target User</th>
-                                            <th>Date</th>
-                                            <th>Message</th>
-                                            <th class="text-right">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <c:forEach items="${adviceList}" var="adv">
-                                            <tr>
-                                                <td class="font-mono">${adv.userId != null ? adv.userId : adv.user_id}</td>
-                                                <td class="text-muted">${adv.date}</td>
-                                                <td>${adv.message}</td>
-                                                <td class="text-right">
-                                                    <form method="post" action="${pageContext.request.contextPath}/advisor/delete-advice" style="display:inline;">
-                                                        <input type="hidden" name="id" value="${adv.id}">
-                                                        <button type="submit" class="btn btn-danger btn-sm btn-delete-confirm" data-item-name="advice">Delete</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <c:forEach items="${adviceList}" var="adv">
+                                <div class="advice-card">
+                                    <div class="advice-meta">
+                                        <span>To <span class="font-mono">${adv.userId}</span></span>
+                                        <span>${adv.date}</span>
+                                    </div>
+                                    <div class="advice-content">${adv.message}</div>
+                                    <form method="post" action="${pageContext.request.contextPath}/advisor/delete-advice" class="text-right mt-2">
+                                        <input type="hidden" name="id" value="${adv.id}">
+                                        <button type="submit" class="btn btn-danger btn-sm btn-delete-confirm" data-item-name="advice">Delete</button>
+                                    </form>
+                                </div>
+                            </c:forEach>
                         </c:when>
                         <c:otherwise>
                             <div class="empty-state">

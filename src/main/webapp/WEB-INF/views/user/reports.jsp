@@ -15,6 +15,7 @@
 
     <main class="main-content">
         <div class="content-wrapper">
+            <jsp:include page="../common/alerts.jsp"/>
             
             <div class="page-header">
                 <div>

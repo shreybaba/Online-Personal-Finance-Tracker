@@ -15,6 +15,7 @@
 
     <main class="main-content">
         <div class="content-wrapper" style="max-width: 560px;">
+            <jsp:include page="../common/alerts.jsp"/>
             
             <div class="page-header">
                 <div>
