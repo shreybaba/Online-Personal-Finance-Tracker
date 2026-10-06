@@ -32,6 +32,7 @@
             <a href="#features" class="nav-anchor">Features</a>
             <a href="#roles" class="nav-anchor">Who it's for</a>
             <a href="#how" class="nav-anchor">How it works</a>
+            <a href="${ctx}/docs">Docs</a>
             <c:choose>
                 <c:when test="${not empty homeUrl}">
                     <a href="${homeUrl}" class="btn btn-primary btn-sm">Open dashboard</a>

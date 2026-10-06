@@ -30,6 +30,15 @@
     gap: var(--space-3);
 }
 
+.navbar-link {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.navbar-link:hover {
+    color: var(--text-primary);
+}
+
 .user-profile-badge {
     display: flex;
     align-items: center;
