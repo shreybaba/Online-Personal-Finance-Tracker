@@ -552,7 +552,8 @@ Online-Personal-Finance-Tracker/
 │       │   └── util/
 │       │
 │       ├── resources/
-│       │   └── db.properties
+│       │   |__ db.properties
+|       |   |__ schema.sql
 │       │
 │       └── webapp/
 │           ├── WEB-INF/
