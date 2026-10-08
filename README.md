@@ -12,69 +12,66 @@ basic multithreading.
 
 ## 1. Project Overview
 
-The application provides different features according to the user's
-role.
+The application provides different features according to the user's role.
 
-  -----------------------------------------------------------------------
-  Role                                Main Responsibilities
-  ----------------------------------- -----------------------------------
-  **User**                            Register/login, manage expenses,
-                                      manage budgets, view reports, view
-                                      advice, submit feedback
+### User
 
-  **Advisor**                         View available users, view selected
-                                      users' expenses, provide financial
-                                      advice
+- Register and log in
+- Add, view, update, and delete expenses
+- Create and manage budgets
+- View spending summaries and recent activity
+- Generate financial reports
+- View budget-versus-actual spending
+- View financial advice
+- Submit feedback
 
-  **Admin**                           Manage user accounts, review
-                                      feedback, update feedback status,
-                                      view basic statistics
-  -----------------------------------------------------------------------
+### Advisor
+
+- Log in through an advisor account
+- View available users
+- View selected users' expense information
+- Provide financial advice
+- View advice records
+
+### Admin
+
+- Log in through an admin account
+- View and manage user accounts
+- View submitted feedback
+- Update feedback status
+- View basic system-level statistics
 
 ### Main Features
 
-  -----------------------------------------------------------------------
-  Feature                             Description
-  ----------------------------------- -----------------------------------
-  Authentication                      Registration, login, logout and
-                                      session-based authentication
+| Feature | Description |
+|---|---|
+| **Authentication** | Registration, login, logout, and session-based authentication |
+| **Expense Management** | Add, view, update, and delete expenses |
+| **Budget Management** | Create, view, update, and delete budgets |
+| **Reports** | Spending summaries, category-wise spending, and budget comparison |
+| **Advisor Module** | Advisors can view user expense information and provide financial advice |
+| **Feedback** | Users can submit feedback and admins can review and update its status |
 
-  Expense Management                  Add, view, edit and delete expenses
-
-  Budget Management                   Create, view, edit and delete
-                                      budgets
-
-  Reports                             Spending summaries, category-wise
-                                      spending and budget comparison
-
-  Advisor Module                      Advisors can view user expense
-                                      information and provide advice
-
-  Feedback                            Users can submit feedback and
-                                      admins can review it
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
+---
 
 ## 2. Technologies Used
 
-  Area                   Technology
-  ---------------------- -----------------------------------
-  Programming Language   Java
-  Frontend               JSP, HTML, CSS, JavaScript, JSTL
-  Web Layer              Jakarta Servlets, Servlet Filters
-  Backend                Java Service and DAO layers
-  Database               MySQL 8.x
-  Database Access        JDBC
-  Build Tool             Maven
-  Web Server             Apache Tomcat 11
-  Java Version           JDK 21+
-  Packaging              WAR
+| Area | Technology |
+|---|---|
+| **Programming Language** | Java |
+| **Frontend** | JSP, HTML, CSS, JavaScript, JSTL |
+| **Web Layer** | Jakarta Servlets, Servlet Filters |
+| **Backend** | Java Service Classes, DAO Pattern |
+| **Database** | MySQL 8.x |
+| **Database Access** | JDBC |
+| **Build Tool** | Maven |
+| **Web Server** | Apache Tomcat 11 |
+| **Java Version** | JDK 21+ |
+| **Packaging** | WAR |
 
-> The Maven project is compiled for Java 21, so **JDK 21 or newer** is
-> recommended.
+> The Maven project is compiled for Java 21, so **JDK 21 or newer** is recommended.
 
-------------------------------------------------------------------------
+---
 
 ## 3. How the Application Works
 
@@ -96,14 +93,14 @@ JDBC
 MySQL
 ```
 
-  Layer                Purpose
-  -------------------- --------------------------------------------------
-  **JSP / Frontend**   Displays pages and collects user input
-  **Servlets**         Receive HTTP requests and send responses
-  **Services**         Handle validation and application/business logic
-  **DAOs**             Perform database operations using JDBC
-  **Models**           Represent application data
-  **Filters**          Handle authentication and role-based access
+| Layer | Purpose |
+|---|---|
+| **JSP / Frontend** | Displays pages and collects user input |
+| **Servlets** | Receive HTTP requests and send responses |
+| **Services** | Handle validation and application/business logic |
+| **DAOs** | Perform database operations using JDBC |
+| **Models** | Represent application data |
+| **Filters** | Handle authentication and role-based access |
 
 ------------------------------------------------------------------------
 
@@ -119,13 +116,13 @@ suspicious4
 
 ### Main Tables
 
-  Table        Purpose
-  ------------ ---------------------------------
-  `user`       Stores user account information
-  `expenses`   Stores user expenses
-  `budgets`    Stores budgets
-  `advice`     Stores advisor advice
-  `feedback`   Stores user feedback
+| Table | Purpose |
+|---|---|
+| `user` | Stores user account information |
+| `expenses` | Stores user expenses |
+| `budgets` | Stores budgets |
+| `advice` | Stores advisor advice |
+| `feedback` | Stores user feedback |
 
 The database structure is available at:
 
