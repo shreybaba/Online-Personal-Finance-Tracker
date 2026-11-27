@@ -116,7 +116,7 @@ public class AiAdvisorService {
             sb.append("Category breakdown:\n");
             for (CategorySummary cs : categories) {
                 sb.append("- ").append(cs.getCategory()).append(": INR ")
-                  .append(cs.getTotalAmount()).append(" (").append(cs.getPercentage()).append("%)\n");
+                  .append(cs.getAmount()).append(" (").append(cs.getPercentage()).append("%)\n");
             }
         }
 
@@ -189,7 +189,7 @@ public class AiAdvisorService {
         if (q.contains("budget") || q.contains("limit") || q.contains("over")) {
             if (budgets == null || budgets.isEmpty()) {
                 return "You haven't set any category budgets yet. Start by creating a monthly budget for your top spending categories"
-                        + (topCategory != null ? "—especially " + topCategory.getCategory() + " (currently ₹" + topCategory.getTotalAmount() + ")" : "")
+                        + (topCategory != null ? "—especially " + topCategory.getCategory() + " (currently ₹" + topCategory.getAmount() + ")" : "")
                         + ". You can also send a request to a human advisor on the right for a tailored budget plan.";
             }
             if (overBudgetCount > 0 || nearLimitCount > 0) {
@@ -203,11 +203,11 @@ public class AiAdvisorService {
 
         if (q.contains("save") || q.contains("saving") || q.contains("reduce") || q.contains("cut")) {
             if (topCategory != null) {
-                BigDecimal tenPercent = topCategory.getTotalAmount()
+                BigDecimal tenPercent = topCategory.getAmount()
                         .multiply(new BigDecimal("0.15"))
                         .setScale(0, RoundingMode.HALF_UP);
                 return "Your largest expense category is " + topCategory.getCategory() + " at ₹"
-                        + topCategory.getTotalAmount() + " (" + topCategory.getPercentage()
+                        + topCategory.getAmount() + " (" + topCategory.getPercentage()
                         + "% of your spending). Trimming this category by 15% would save about ₹" + tenPercent
                         + ". Try applying the 50/30/20 rule and setting a tighter limit in Budgets.";
             }
@@ -230,7 +230,7 @@ public class AiAdvisorService {
 
         if (topCategory != null) {
             reply.append(" Top category: ").append(topCategory.getCategory())
-                 .append(" (₹").append(topCategory.getTotalAmount()).append(", ")
+                 .append(" (₹").append(topCategory.getAmount()).append(", ")
                  .append(topCategory.getPercentage()).append("%).");
         }
 
